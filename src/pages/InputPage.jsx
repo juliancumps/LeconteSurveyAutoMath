@@ -78,15 +78,15 @@ function InputPage() {
 
   return (
     <div className="page-container">
-      <h1>Calculate Terminus Position</h1>
-      <p>Input angle measurements from both theodolites to solve the triangle and locate glacier terminus points.</p>
+      <h1>Calculate Triangle</h1>
+      <p>Input angles to solve the triangle and locate points.</p>
 
       <div className="grid-2" style={{ marginTop: '2rem' }}>
         {/* INPUT FORM */}
         <div>
           <form onSubmit={handleCalculate}>
             <div style={{ marginBottom: '2rem', padding: '1.5rem', border: '1px solid #d0d0d0', backgroundColor: '#fafaf8' }}>
-              <h3>Theodolite Station A</h3>
+              <h3>Northside Angle</h3>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div>
                   <label>Degrees</label>
@@ -131,7 +131,7 @@ function InputPage() {
             </div>
 
             <div style={{ marginBottom: '2rem', padding: '1.5rem', border: '1px solid #d0d0d0', backgroundColor: '#fafaf8' }}>
-              <h3>Theodolite Station B</h3>
+              <h3>Southside Angle</h3>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div>
                   <label>Degrees</label>
@@ -210,21 +210,21 @@ function InputPage() {
               
               <div style={{ marginBottom: '1.5rem', paddingBottom: '1.5rem', borderBottom: '1px solid #0a9fb5' }}>
                 <div style={{ marginBottom: '1rem' }}>
-                  <div style={{ fontSize: '0.85rem', color: '#666', textTransform: 'uppercase', letterSpacing: '1px' }}>Angle A (Station 1)</div>
+                  <div style={{ fontSize: '0.85rem', color: '#666', textTransform: 'uppercase', letterSpacing: '1px' }}>Northside Angle</div>
                   <div style={{ fontSize: '1.8rem', fontWeight: 'bold', color: '#0a9fb5' }}>
                     {calculation.angle1.toFixed(4)}°
                   </div>
                 </div>
 
                 <div style={{ marginBottom: '1rem' }}>
-                  <div style={{ fontSize: '0.85rem', color: '#666', textTransform: 'uppercase', letterSpacing: '1px' }}>Angle B (Station 2)</div>
+                  <div style={{ fontSize: '0.85rem', color: '#666', textTransform: 'uppercase', letterSpacing: '1px' }}>Southside Angle</div>
                   <div style={{ fontSize: '1.8rem', fontWeight: 'bold', color: '#0a9fb5' }}>
                     {calculation.angle2.toFixed(4)}°
                   </div>
                 </div>
 
                 <div style={{ marginBottom: '1rem' }}>
-                  <div style={{ fontSize: '0.85rem', color: '#666', textTransform: 'uppercase', letterSpacing: '1px' }}>Angle C (Terminus)</div>
+                  <div style={{ fontSize: '0.85rem', color: '#666', textTransform: 'uppercase', letterSpacing: '1px' }}>Terminus Angle</div>
                   <div style={{ fontSize: '1.8rem', fontWeight: 'bold', color: '#ff6b35' }}>
                     {calculation.angle3.toFixed(4)}°
                   </div>
@@ -269,9 +269,9 @@ function InputPage() {
               <thead>
                 <tr style={{ borderBottom: '2px solid #0a9fb5' }}>
                   <th style={{ textAlign: 'left', padding: '1rem', fontWeight: 'bold', color: '#0a9fb5', textTransform: 'uppercase', fontSize: '0.85rem' }}>Point</th>
-                  <th style={{ textAlign: 'left', padding: '1rem', fontWeight: 'bold', color: '#0a9fb5', textTransform: 'uppercase', fontSize: '0.85rem' }}>Angle A</th>
-                  <th style={{ textAlign: 'left', padding: '1rem', fontWeight: 'bold', color: '#0a9fb5', textTransform: 'uppercase', fontSize: '0.85rem' }}>Angle B</th>
-                  <th style={{ textAlign: 'left', padding: '1rem', fontWeight: 'bold', color: '#0a9fb5', textTransform: 'uppercase', fontSize: '0.85rem' }}>Angle C</th>
+                  <th style={{ textAlign: 'left', padding: '1rem', fontWeight: 'bold', color: '#0a9fb5', textTransform: 'uppercase', fontSize: '0.85rem' }}>Nothside <Angle></Angle></th>
+                  <th style={{ textAlign: 'left', padding: '1rem', fontWeight: 'bold', color: '#0a9fb5', textTransform: 'uppercase', fontSize: '0.85rem' }}>Southside Angle</th>
+                  <th style={{ textAlign: 'left', padding: '1rem', fontWeight: 'bold', color: '#0a9fb5', textTransform: 'uppercase', fontSize: '0.85rem' }}>Terminus Angle</th>
                   <th style={{ textAlign: 'left', padding: '1rem', fontWeight: 'bold', color: '#0a9fb5', textTransform: 'uppercase', fontSize: '0.85rem' }}>Time</th>
                 </tr>
               </thead>
